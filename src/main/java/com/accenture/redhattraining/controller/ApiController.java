@@ -25,7 +25,7 @@ public class ApiController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
     
-    @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "api/get", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> getAllCustomers() {
         List<String> list = new ArrayList<>();
         list.add("This is test app");
