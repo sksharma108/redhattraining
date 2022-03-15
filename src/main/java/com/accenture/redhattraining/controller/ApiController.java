@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiController {
 
     @GetMapping(value = "hello", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<String>> getAllCustomers() {
+    public ResponseEntity<List<String>> hello() {
         List<String> list = new ArrayList<>();
         list.add("This is red hat training demo");
 
