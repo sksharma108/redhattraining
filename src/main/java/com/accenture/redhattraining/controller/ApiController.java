@@ -12,9 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "api")
 public class ApiController {
 
+    @GetMapping(value = "hello", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<String>> getAllCustomers() {
+        List<String> list = new ArrayList<>();
+        list.add("This is red hat training demo");
+
+        if (!list.isEmpty())
+            return new ResponseEntity<>(list, HttpStatus.OK);
+        else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+    
     @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> getAllCustomers() {
         List<String> list = new ArrayList<>();
